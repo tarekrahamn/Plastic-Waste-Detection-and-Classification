@@ -23,7 +23,7 @@
 ---
 
 ## Table of Contents
-- [Project Title](#project-title)
+- [Plastic Waste Detection and Classification](#plastic-waste-detection-and-classification)
 - [Overview](#overview)
 - [Objectives](#objectives)
 - [Detection Categories](#detection-categories)

@@ -72,8 +72,7 @@ The dataset contains five object categories:
 | 3 | Plastic-Straw |
 | 4 | Polythene |
 
-The IDs above are presented as an illustrative ordered list. Confirm the exact class-ID mapping against the dataset's `data.yaml` before using numeric IDs in downstream code.
-
+The class names and IDs are defined in the dataset configuration file (data.yaml) and are used consistently during model training and evaluation.
 ## Dataset
 
 The experiments use the **Plastic Waste Detection Dataset**, with the dataset record identified by the following DOI:

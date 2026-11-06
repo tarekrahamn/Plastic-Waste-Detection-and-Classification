@@ -381,7 +381,7 @@ If this repository or its experimental results are used in academic work, please
 
 ## License
 
-No software license has been specified for this repository in this README. Unless a `LICENSE` file is added, do not assume that the repository's source code is licensed for reuse.
+No software license has been specified for this repository in this README. 
 
 The dataset is identified as **CC BY 4.0**. This dataset license does not automatically apply to the source code in this repository. Review the dataset's original record and attribution requirements before redistributing dataset material.
 

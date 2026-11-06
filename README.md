@@ -2,12 +2,21 @@
 
 # Plastic Waste Detection and Classification
 
-**Deep-learning-based plastic waste object detection using YOLOv8s, YOLO12s, and YOLO26s.**
+### An AI-powered object detection study for identifying and classifying plastic waste using YOLO-based deep learning models.
 
-[![GitHub repository](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/tarekrahamn/Plastic-Waste-Detection-and-Classification)
-![Task](https://img.shields.io/badge/Task-Object%20Detection-2563EB?style=for-the-badge)
-![Models](https://img.shields.io/badge/Models-YOLOv8s%20%7C%20YOLO12s%20%7C%20YOLO26s-16865B?style=for-the-badge)
-[![Dataset DOI](https://img.shields.io/badge/Dataset-DOI%3A%2010.17632%2Fwsxmhf8sgv.2-0A7B83?style=for-the-badge)](https://doi.org/10.17632/wsxmhf8sgv.2)
+<p>
+  <a href="https://github.com/tarekrahamn/Plastic-Waste-Detection-and-Classification">
+    <img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" alt="GitHub repository">
+  </a>
+  <img src="https://img.shields.io/badge/Task-Object%20Detection-2563EB?style=for-the-badge" alt="Object detection">
+  <img src="https://img.shields.io/badge/Framework-Ultralytics-7C3AED?style=for-the-badge" alt="Ultralytics">
+  <img src="https://img.shields.io/badge/Models-YOLOv8%20%7C%20YOLO12%20%7C%20YOLO26-059669?style=for-the-badge" alt="YOLO models">
+  <a href="https://doi.org/10.17632/wsxmhf8sgv.2">
+    <img src="https://img.shields.io/badge/Dataset-DOI%3A%2010.17632%2Fwsxmhf8sgv.2-0A7B83?style=for-the-badge" alt="Dataset DOI">
+  </a>
+</p>
+
+**Repository:** [tarekrahamn/Plastic-Waste-Detection-and-Classification](https://github.com/tarekrahamn/Plastic-Waste-Detection-and-Classification)
 
 </div>
 
@@ -16,86 +25,87 @@
 ## Table of Contents
 
 - [Overview](#overview)
-- [Project Objectives](#project-objectives)
+- [Objectives](#objectives)
 - [Detection Categories](#detection-categories)
 - [Dataset](#dataset)
 - [Dataset Statistics](#dataset-statistics)
 - [Methodology](#methodology)
 - [Experimental Setup](#experimental-setup)
-- [Results and Model Comparison](#results-and-model-comparison)
+- [Model Performance](#model-performance)
 - [Visual Results](#visual-results)
 - [Repository Structure](#repository-structure)
 - [Getting Started](#getting-started)
 - [Reproducibility Notes](#reproducibility-notes)
 - [Limitations and Future Work](#limitations-and-future-work)
 - [Authors and Contributions](#authors-and-contributions)
-- [Dataset Citation](#dataset-citation)
+- [Citation](#citation)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ## Overview
 
-Plastic pollution is a major environmental challenge. Automated detection of plastic waste in images can support waste monitoring, sorting, and environmental assessment.
+Plastic pollution is a significant environmental challenge. Efficient identification of plastic waste in images can support waste monitoring, sorting, and environmental assessment workflows.
 
-This project investigates deep-learning-based **plastic waste object detection and category recognition** using three YOLO model variants: **YOLOv8s, YOLO12s, and YOLO26s**. Each model was trained for five plastic-waste categories and evaluated using standard object-detection metrics.
+This project investigates deep-learning-based **plastic waste object detection and category recognition** using three YOLO model variants: **YOLOv8s, YOLO12s, and YOLO26s**. The models are fine-tuned on a five-category plastic-waste dataset and evaluated using standard object-detection metrics.
 
-The repository includes the model-training notebooks and selected evaluation visualizations.
+The repository provides the training notebooks and selected evaluation visualizations for the three model experiments.
 
-> **Task clarification:** This project performs object detection: it predicts bounding boxes and category labels for objects in an image. It is not a separate image-level classification pipeline.
+> **Task clarification:** The implemented pipeline is object detection. It predicts bounding boxes and assigns a waste-category label to each detected object. It is not a separate image-level classification pipeline.
 
-## Project Objectives
+## Objectives
 
-- Build an object-detection workflow for identifying common plastic-waste items.
-- Train and evaluate YOLOv8s, YOLO12s, and YOLO26s.
+- Develop an object-detection workflow for identifying common plastic-waste items.
+- Train and evaluate YOLOv8s, YOLO12s, and YOLO26s under a consistent high-level training setup.
 - Compare model performance using Precision, Recall, F1-score, mAP@50, and mAP@50–95.
-- Inspect model behaviour using confusion matrices and evaluation curves.
-- Provide a foundation for further research into automated plastic-waste monitoring.
+- Examine model behaviour through precision–recall curves, F1 curves, and confusion matrices.
+- Provide a reproducible starting point for further research on automated plastic-waste monitoring.
 
 ## Detection Categories
 
 The dataset contains five object categories:
 
-| Category |
-|---|
-| Plastic-Bottle |
-| Plastic-Cup |
-| Plastic-Packet |
-| Plastic-Straw |
-| Polythene |
+| Class ID* | Category |
+|---:|---|
+| 0 | Plastic-Bottle |
+| 1 | Plastic-Cup |
+| 2 | Plastic-Packet |
+| 3 | Plastic-Straw |
+| 4 | Polythene |
 
-For numeric class IDs, refer to the dataset's `data.yaml` file. The exact class-ID mapping should not be inferred from the order in this table.
+\*The IDs above are presented as an illustrative ordered list. Confirm the exact class-ID mapping against the dataset's `data.yaml` before using numeric IDs in downstream code.
 
 ## Dataset
 
-The experiments use the **Plastic Waste Detection Dataset**.
+The experiments use the **Plastic Waste Detection Dataset**, with the dataset record identified by the following DOI:
 
-- **Dataset DOI:** [10.17632/wsxmhf8sgv.2](https://doi.org/10.17632/wsxmhf8sgv.2)
+- **DOI:** [10.17632/wsxmhf8sgv.2](https://doi.org/10.17632/wsxmhf8sgv.2)
 - **Dataset record:** [Mendeley Data](https://data.mendeley.com/datasets/wsxmhf8sgv/2)
-- **Dataset license:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
-- **Dataset workflow/source platform:** [Roboflow](https://roboflow.com/)
+- **License stated for the dataset:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
-The dataset's DOI record is the source of record for dataset attribution and reuse conditions. Please review the original dataset record before redistributing dataset files.
+[Roboflow](https://roboflow.com/) is used in the notebooks as the dataset access/export workflow. The dataset's DOI record and its CC BY 4.0 terms should be treated as the source of record for dataset attribution and reuse conditions.
 
-## Dataset Statistics
+### Dataset split
 
 The dataset contains **6,356 images** and **7,918 annotations** across the training, validation, and test subsets.
+
+## Dataset Statistics
 
 | Split | Images | Image Share | Annotations | Annotation Share | Avg. Annotations / Image | Multi-object Images |
 |---|---:|---:|---:|---:|---:|---:|
 | Training | 4,449 | 70.0% | 5,551 | 70.1% | 1.25 | 726 (16.3%) |
 | Validation | 1,271 | 20.0% | 1,578 | 19.9% | 1.24 | 205 (16.1%) |
-| Testing | 636 | 10.0% | 789 | 10.0% | 1.25 | 92 (14.5%) |
+| Test | 636 | 10.0% | 789 | 10.0% | 1.25 | 92 (14.5%) |
 | **Total** | **6,356** | **100%** | **7,918** | **100%** | **1.25** | **1,023 (16.1%)** |
 
-*Statistics are transcribed from the dataset summary table provided by the project authors.*
+*Dataset split statistics are transcribed from the project research table supplied by the authors.*
 
 ## Methodology
 
-The overall workflow consists of dataset preparation, model training, validation, and comparative evaluation.
+The experimental workflow consists of dataset preparation, model fine-tuning, validation, and comparative evaluation.
 
 ```mermaid
 flowchart TD
-    A[Plastic Waste Detection Dataset] --> B[Dataset preparation and export]
+    A[Plastic Waste Dataset] --> B[Dataset preparation and export]
     B --> C[Train / Validation / Test split]
     C --> D1[YOLOv8s]
     C --> D2[YOLO12s]
@@ -108,21 +118,23 @@ flowchart TD
     G --> H[Comparative analysis]
 ```
 
-### Models
+### Model training
+
+Three small YOLO model variants were trained:
 
 - **YOLOv8s**
 - **YOLO12s**
 - **YOLO26s**
 
-All three models were successfully trained using the project workflow.
+The notebooks use pretrained model weights and fine-tune them for the five target classes.
 
-### Evaluation Metrics
+### Evaluation metrics
 
-- **Precision:** Proportion of predicted detections that are correct.
-- **Recall:** Proportion of ground-truth objects successfully detected.
-- **F1-score:** Harmonic mean of Precision and Recall.
+- **Precision:** The proportion of predicted detections that are correct.
+- **Recall:** The proportion of ground-truth objects that are successfully detected.
+- **F1-score:** The harmonic mean of Precision and Recall.
 - **mAP@50:** Mean Average Precision at an IoU threshold of 0.50.
-- **mAP@50–95:** Mean Average Precision averaged across IoU thresholds from 0.50 to 0.95.
+- **mAP@50–95:** Mean Average Precision averaged over IoU thresholds from 0.50 to 0.95.
 
 ## Experimental Setup
 
@@ -132,119 +144,76 @@ All three models were successfully trained using the project workflow.
 | Model variants | YOLOv8s, YOLO12s, YOLO26s |
 | Training epochs | 50 |
 | Input image size | 640 × 640 |
-| GPU environment | NVIDIA T4 × 2 |
+| GPU environment | NVIDIA T4 × 2 (Kaggle environment, as reported by the authors) |
 | Task | Object detection |
 | Number of classes | 5 |
-| Training status | All three models successfully trained |
 
-The experiments were conducted in a Kaggle GPU environment, as reported by the authors. Follow the setup cells in each notebook for the corresponding model-specific package configuration.
+The notebooks are designed for execution in Kaggle and include the installation, dataset-access, training, validation, prediction, and result-archiving steps.
 
-## Results and Model Comparison
+## Model Performance
 
-The following values are the **final research-paper comparison results confirmed by the authors**.
+The following values are the **final research-paper comparison results supplied by the authors**.
 
-| Model | Epochs | Precision | Recall | F1-score | mAP@50 | mAP@50–95 |
+| Model | Epochs | mAP@50 | Precision | Recall | F1-score | mAP@50–95 |
 |---|---:|---:|---:|---:|---:|---:|
-| YOLOv8s | 50 | 0.910 | **0.850** | 0.882 | 0.903 | 0.671 |
-| YOLO12s | 50 | 0.920 | 0.840 | **0.888** | **0.908** | 0.670 |
-| YOLO26s | 50 | **0.923** | 0.845 | 0.882 | 0.907 | **0.681** |
+| YOLOv8s | 50 | 0.903 | 0.910 | **0.850** | 0.882 | 0.671 |
+| YOLO12s | 50 | **0.908** | 0.920 | 0.840 | **0.888** | 0.670 |
+| YOLO26s | 50 | 0.907 | **0.923** | 0.845 | 0.882 | **0.681** |
 
-### Key Findings
+### Key observations
 
 - **YOLO12s** achieved the highest mAP@50 (0.908) and F1-score (0.888).
 - **YOLO26s** achieved the highest Precision (0.923) and mAP@50–95 (0.681).
 - **YOLOv8s** achieved the highest Recall (0.850).
-- No single model achieved the best value across every metric; model selection depends on the priorities of the target application.
+- The results show a close performance comparison across the three model variants; the most suitable model depends on the metric and application priorities.
 
-*These values are reported from the authors' final comparison table and are not recalculated in this README.*
+*The values above are reported as provided in the authors' final comparison table. They are not recomputed in this README.*
 
 ## Visual Results
 
-The following figures are included in the repository under `Figures/`. Standard Markdown image syntax is used here for compatibility with GitHub's README renderer. Keep the `Figures/` directory and its subfolders in the same locations as shown in the repository.
+The `Figures/` directory contains the saved model evaluation plots. The following figures are embedded directly from the repository.
 
 ### YOLOv8
 
-**Confusion Matrix**
+| Confusion Matrix | Normalized Confusion Matrix |
+|---|---|
+| ![YOLOv8 confusion matrix](Figures/YOLOv8/confusion_matrix.png) | ![YOLOv8 normalized confusion matrix](Figures/YOLOv8/confusion_matrix_normalized.png) |
 
-![YOLOv8 confusion matrix](./Figures/YOLOv8/confusion_matrix.png)
+| Precision–Recall Curve | F1 Curve |
+|---|---|
+| ![YOLOv8 PR curve](Figures/YOLOv8/PR_curve.png) | ![YOLOv8 F1 curve](Figures/YOLOv8/F1_curve.png) |
 
-**Normalized Confusion Matrix**
-
-![YOLOv8 normalized confusion matrix](./Figures/YOLOv8/confusion_matrix_normalized.png)
-
-**Precision–Recall Curve**
-
-![YOLOv8 precision-recall curve](./Figures/YOLOv8/PR_curve.png)
-
-**F1 Curve**
-
-![YOLOv8 F1 curve](./Figures/YOLOv8/F1_curve.png)
-
-**Precision Curve**
-
-![YOLOv8 precision curve](./Figures/YOLOv8/P_curve.png)
-
-**Recall Curve**
-
-![YOLOv8 recall curve](./Figures/YOLOv8/R_curve.png)
+| Precision Curve | Recall Curve |
+|---|---|
+| ![YOLOv8 precision curve](Figures/YOLOv8/P_curve.png) | ![YOLOv8 recall curve](Figures/YOLOv8/R_curve.png) |
 
 ### YOLO12
 
-**Training Results**
+| Training Results | Confusion Matrix |
+|---|---|
+| ![YOLO12 training results](Figures/YOLOv12/results.png) | ![YOLO12 confusion matrix](Figures/YOLOv12/confusion_matrix.png) |
 
-![YOLO12 training results](./Figures/YOLOv12/results.png)
+| Normalized Confusion Matrix | Precision–Recall Curve |
+|---|---|
+| ![YOLO12 normalized confusion matrix](Figures/YOLOv12/confusion_matrix_normalized.png) | ![YOLO12 PR curve](Figures/YOLOv12/BoxPR_curve.png) |
 
-**Confusion Matrix**
-
-![YOLO12 confusion matrix](./Figures/YOLOv12/confusion_matrix.png)
-
-**Normalized Confusion Matrix**
-
-![YOLO12 normalized confusion matrix](./Figures/YOLOv12/confusion_matrix_normalized.png)
-
-**Precision–Recall Curve**
-
-![YOLO12 precision-recall curve](./Figures/YOLOv12/BoxPR_curve.png)
-
-**F1 Curve**
-
-![YOLO12 F1 curve](./Figures/YOLOv12/BoxF1_curve.png)
-
-**Precision Curve**
-
-![YOLO12 precision curve](./Figures/YOLOv12/BoxP_curve.png)
-
-**Recall Curve**
-
-![YOLO12 recall curve](./Figures/YOLOv12/BoxR_curve.png)
+| F1 Curve | Precision and Recall Curves |
+|---|---|
+| ![YOLO12 F1 curve](Figures/YOLOv12/BoxF1_curve.png) | [Precision curve](Figures/YOLOv12/BoxP_curve.png) · [Recall curve](Figures/YOLOv12/BoxR_curve.png) |
 
 ### YOLO26
 
-The supplied `Figures/YOLOv26/` folder does not contain a `results.png` file. The available evaluation plots are shown below.
+| Training Results | Confusion Matrix |
+|---|---|
+| ![YOLO26 training results](Figures/YOLOv26/results.png) | ![YOLO26 confusion matrix](Figures/YOLOv26/confusion_matrix.png) |
 
-**Confusion Matrix**
+| Normalized Confusion Matrix | Precision–Recall Curve |
+|---|---|
+| ![YOLO26 normalized confusion matrix](Figures/YOLOv26/confusion_matrix_normalized.png) | ![YOLO26 PR curve](Figures/YOLOv26/BoxPR_curve.png) |
 
-![YOLO26 confusion matrix](./Figures/YOLOv26/confusion_matrix.png)
-
-**Normalized Confusion Matrix**
-
-![YOLO26 normalized confusion matrix](./Figures/YOLOv26/confusion_matrix_normalized.png)
-
-**Precision–Recall Curve**
-
-![YOLO26 precision-recall curve](./Figures/YOLOv26/BoxPR_curve.png)
-
-**F1 Curve**
-
-![YOLO26 F1 curve](./Figures/YOLOv26/BoxF1_curve.png)
-
-**Precision Curve**
-
-![YOLO26 precision curve](./Figures/YOLOv26/BoxP_curve.png)
-
-**Recall Curve**
-
-![YOLO26 recall curve](./Figures/YOLOv26/BoxR_curve.png)
+| F1 Curve | Precision and Recall Curves |
+|---|---|
+| ![YOLO26 F1 curve](Figures/YOLOv26/BoxF1_curve.png) | [Precision curve](Figures/YOLOv26/BoxP_curve.png) · [Recall curve](Figures/YOLOv26/BoxR_curve.png) |
 
 ## Repository Structure
 
@@ -258,63 +227,83 @@ Plastic-Waste-Detection-and-Classification/
 │
 ├── Figures/
 │   ├── YOLOv8/
+│   │   ├── confusion_matrix.png
+│   │   ├── confusion_matrix_normalized.png
+│   │   ├── F1_curve.png
+│   │   ├── PR_curve.png
+│   │   ├── P_curve.png
+│   │   └── R_curve.png
+│   │
 │   ├── YOLOv12/
+│   │   ├── results.png
+│   │   ├── confusion_matrix.png
+│   │   ├── confusion_matrix_normalized.png
+│   │   ├── BoxF1_curve.png
+│   │   ├── BoxPR_curve.png
+│   │   ├── BoxP_curve.png
+│   │   └── BoxR_curve.png
+│   │
 │   └── YOLOv26/
+│       ├── results.png
+│       ├── confusion_matrix.png
+│       ├── confusion_matrix_normalized.png
+│       ├── BoxF1_curve.png
+│       ├── BoxPR_curve.png
+│       ├── BoxP_curve.png
+│       └── BoxR_curve.png
 │
 └── README.md
 ```
-
-The `Figures/` folders contain the evaluation images referenced in the Visual Results section. The notebooks are stored in `Code/`.
 
 ## Getting Started
 
 ### Requirements
 
-- A Kaggle account (recommended, because the notebooks are configured for Kaggle).
+- A Kaggle account (recommended, as the notebooks are configured for Kaggle).
 - Internet access enabled in the notebook environment to install packages and retrieve the dataset.
-- GPU acceleration.
+- A GPU accelerator. The reported experiments used an NVIDIA T4 × 2 environment.
 - Access to the dataset through its source/export workflow.
 
-### Run a Notebook on Kaggle
+### Run the notebooks on Kaggle
 
 1. Open the repository and navigate to the `Code/` directory.
 2. Open the notebook for the model you want to run.
 3. Import or upload the notebook into Kaggle.
-4. In Notebook Settings, enable a GPU accelerator and Internet access.
-5. Run the notebook's installation and setup cells.
-6. Configure your own Roboflow credentials and dataset project/version details, if required.
-7. Execute the notebook cells in order to download the dataset, train the model, validate it, and generate predictions.
+4. In **Notebook Settings**, enable a GPU accelerator and turn Internet access on.
+5. Install the dependencies using the installation cell in the notebook.
+6. Configure your Roboflow credentials and dataset project/version details.
+7. Run the notebook cells in order to download the dataset, train the model, validate it, and generate predictions.
 
-### Available Notebooks
+### Notebooks
 
 | Model | Notebook |
 |---|---|
-| YOLOv8s | [`Code/YOLOv8.ipynb`](./Code/YOLOv8.ipynb) |
-| YOLO12s | [`Code/YOLOv12.ipynb`](./Code/YOLOv12.ipynb) |
-| YOLO26s | [`Code/YOLOv26.ipynb`](./Code/YOLOv26.ipynb) |
+| YOLOv8s | [`Code/YOLOv8.ipynb`](Code/YOLOv8.ipynb) |
+| YOLO12s | [`Code/YOLOv12.ipynb`](Code/YOLOv12.ipynb) |
+| YOLO26s | [`Code/YOLOv26.ipynb`](Code/YOLOv26.ipynb) |
 
-### Dependency Installation
+### Dependency installation
 
-The notebooks install dependencies through pip. A typical starting point is:
+The notebooks install the required packages through pip. A typical installation command is:
 
 ```bash
 pip install -U ultralytics supervision roboflow
 ```
 
-**Version note:** The notebooks may use different package versions or setup commands. For the closest reproduction of the reported experiments, follow the installation cells in each notebook rather than assuming one shared package version.
+**Version note:** The YOLOv8 notebook uses an Ultralytics version constraint, while the YOLO12 and YOLO26 notebooks use their own notebook-specific setup. For the closest reproduction of the reported experiments, follow the installation cells in each notebook rather than assuming one shared package version.
 
-### Dataset Credentials and Configuration
+### Dataset credentials and configuration
 
-Before running the notebooks:
+The notebooks contain placeholder Roboflow credentials and project identifiers. Before running them:
 
-- Supply your own Roboflow API key and project/version details where required.
+- Add your own Roboflow API key and project/version details.
 - Do not commit API keys, passwords, or private tokens to GitHub.
 - Prefer Kaggle Secrets or environment variables for sensitive credentials.
 - Ensure the downloaded dataset export is compatible with the notebook's YOLO data configuration (`data.yaml`).
 
-### Example Training Command
+### Training configuration
 
-The following is a generic Ultralytics YOLO training example. Use the model checkpoint and dataset path specified in the relevant notebook.
+The notebooks use 50 epochs and an image size of 640 pixels. The YOLO training command follows this general pattern:
 
 ```bash
 yolo task=detect mode=train \
@@ -325,41 +314,42 @@ yolo task=detect mode=train \
   plots=True
 ```
 
-For YOLO12 and YOLO26, use the corresponding model checkpoint configured in their notebooks.
+For YOLO12 and YOLO26, replace the model checkpoint with the corresponding model variant used in the relevant notebook.
 
 ## Reproducibility Notes
 
-- Keep dataset versions, export formats, and data splits consistent when comparing runs.
+- Dataset versions and export formats should be kept consistent when comparing runs.
 - Record the Ultralytics, PyTorch, CUDA, and Python versions used for each experiment.
-- Use consistent evaluation settings across all model variants.
-- Preserve the best model weights and validation logs if you intend to publish or extend the experiments.
-- The repository structure listed here includes notebooks and selected figures; it does not indicate that the full dataset or trained weight files are included.
+- Keep the train/validation/test split fixed when reproducing the reported comparison.
+- Use the same evaluation settings and confidence/IoU conventions across models.
+- Store the best model weights and complete validation logs alongside the generated plots if you plan to publish or extend the experiments.
+- The repository currently contains notebooks and selected figures; the dataset files and trained weight files are not included in the listed repository structure.
 
 ## Limitations and Future Work
 
-### Current Limitations
+### Current limitations
 
 - The experiments cover five plastic-waste categories; performance on other waste types is not established by these results.
-- The supplied comparison table does not report deployment latency, throughput, memory consumption, or edge-device performance.
-- Reproducing the exact experiments requires access to the dataset and the relevant notebook environment.
-- Results should be interpreted in the context of the dataset and evaluation protocol used in the study.
+- The reported comparison focuses on object-detection metrics. Deployment latency, throughput, memory consumption, and edge-device performance are not reported in the supplied comparison table.
+- The repository does not include the full dataset or trained model checkpoints, so reproducing the exact experiment requires access to the dataset and retraining or separately obtaining the weights.
+- The reported results should be interpreted in the context of the dataset and evaluation protocol used in the study.
 
-### Future Work
+### Future work
 
-- Extend the dataset with additional waste categories and diverse environmental conditions.
+- Extend the dataset with additional waste categories and more diverse environmental conditions.
 - Evaluate robustness under varying lighting, occlusion, scale, and background complexity.
 - Report inference speed (FPS), model size, parameter count, and computational cost.
-- Explore real-time deployment for smart waste monitoring and automated sorting.
+- Explore real-time deployment for smart waste monitoring and automated sorting systems.
 - Evaluate generalization on independent datasets and real-world images.
 
 ## Authors and Contributions
 
 ### Authors
 
-| Author | Role / GitHub |
+| Author | GitHub |
 |---|---|
-| **Tarek Rahman** (T. R.) | Project Owner · [@tarekrahamn](https://github.com/tarekrahamn) |
-| **Mst. Asifa Khatun** (M. A. K.; GitHub contributor name: Asifa Islam) | [@islamasifa223-boop](https://github.com/islamasifa223-boop) |
+| **Tarek Rahman** (T. R.) — Project Owner | [@tarekrahamn](https://github.com/tarekrahamn) |
+| **Mst. Asifa Khatun** (M. A. K.; GitHub display/contributor name: Asifa Islam) | [@islamasifa223-boop](https://github.com/islamasifa223-boop) |
 | **Afsana Mimi** (A. M.) | [@afsanamimi5799](https://github.com/afsanamimi5799) |
 | **Mst. Farha Musharrat Monira** (M. F. M. M.) | [@Farha-Musharrat-Monira](https://github.com/Farha-Musharrat-Monira) |
 
@@ -372,7 +362,7 @@ For YOLO12 and YOLO26, use the corresponding model checkpoint configured in thei
 
 All authors have read and approved the final version of the manuscript.
 
-## Dataset Citation
+## Citation
 
 If you use the dataset, please cite its original record and follow the associated attribution requirements:
 

@@ -23,7 +23,7 @@
 ---
 
 ## Table of Contents
-
+- [Project Title](#project-title)
 - [Overview](#overview)
 - [Objectives](#objectives)
 - [Detection Categories](#detection-categories)

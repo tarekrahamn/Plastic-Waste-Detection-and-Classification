@@ -64,13 +64,13 @@ The repository provides the training notebooks and selected evaluation visualiza
 
 The dataset contains five object categories:
 
-| Class ID* | Category |
+| Class ID | Category |
 |---:|---|
-| 0 | Plastic-Bottle |
-| 1 | Plastic-Cup |
-| 2 | Plastic-Packet |
-| 3 | Plastic-Straw |
-| 4 | Polythene |
+| 1 | Plastic-Bottle |
+| 2 | Plastic-Cup |
+| 3 | Plastic-Packet |
+| 4 | Plastic-Straw |
+| 5 | Polythene |
 
 \*The IDs above are presented as an illustrative ordered list. Confirm the exact class-ID mapping against the dataset's `data.yaml` before using numeric IDs in downstream code.
 

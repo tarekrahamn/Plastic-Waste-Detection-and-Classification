@@ -81,8 +81,9 @@ The experiments use the **Plastic Waste Detection Dataset**, with the dataset re
 - **DOI:** [10.17632/wsxmhf8sgv.2](https://doi.org/10.17632/wsxmhf8sgv.2)
 - **Dataset record:** [Mendeley Data](https://data.mendeley.com/datasets/wsxmhf8sgv/2)
 - **License stated for the dataset:** [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+- **Dataset workflow/source platform:** [Roboflow](https://roboflow.com/)
 
-[Roboflow](https://roboflow.com/) is used in the notebooks as the dataset access/export workflow. The dataset's DOI record and its CC BY 4.0 terms should be treated as the source of record for dataset attribution and reuse conditions.
+The dataset's DOI record is the source of record for dataset attribution and reuse conditions. Please review the original dataset record before redistributing dataset files.
 
 ### Dataset split
 

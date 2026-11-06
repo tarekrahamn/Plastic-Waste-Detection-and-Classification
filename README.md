@@ -2,7 +2,7 @@
 
 # Plastic Waste Detection and Classification
 
-### An AI-powered object detection study for identifying and classifying plastic waste using YOLO-based deep learning models.
+### An AI-powered object-detection study to identify and classify plastic waste using YOLO-based deep learning models.
 
 <p>
   <a href="https://github.com/tarekrahamn/Plastic-Waste-Detection-and-Classification">
@@ -145,11 +145,13 @@ The notebooks use pretrained model weights and fine-tune them for the five targe
 | Model variants | YOLOv8s, YOLO12s, YOLO26s |
 | Training epochs | 50 |
 | Input image size | 640 × 640 |
-| GPU environment | NVIDIA T4 × 2 (Kaggle environment, as reported by the authors) |
+| GPU environment | NVIDIA Tesla T4 × 2 |
+| Platform | Kaggle |
 | Task | Object detection |
 | Number of classes | 5 |
+| Training status | All three models successfully trained |
 
-The notebooks are designed for execution in Kaggle and include the installation, dataset-access, training, validation, prediction, and result-archiving steps.
+The notebooks are designed to run in Kaggle and include installation, dataset access, training, validation, prediction, and result-archiving steps.
 
 ## Model Performance
 

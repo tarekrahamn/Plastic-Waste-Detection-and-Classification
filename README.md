@@ -65,7 +65,7 @@ The repository provides the training notebooks and selected evaluation visualiza
 The dataset contains five object categories:
 
 | Class ID | Category |
-|:---|---|
+|---:|---|
 | 1 | Plastic-Bottle |
 | 2 | Plastic-Cup |
 | 3 | Plastic-Packet |

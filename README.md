@@ -72,7 +72,7 @@ The dataset contains five object categories:
 | 4 | Plastic-Straw |
 | 5 | Polythene |
 
-\*The IDs above are presented as an illustrative ordered list. Confirm the exact class-ID mapping against the dataset's `data.yaml` before using numeric IDs in downstream code.
+The IDs above are presented as an illustrative ordered list. Confirm the exact class-ID mapping against the dataset's `data.yaml` before using numeric IDs in downstream code.
 
 ## Dataset
 

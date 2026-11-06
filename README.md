@@ -352,7 +352,7 @@ For YOLO12 and YOLO26, replace the model checkpoint with the corresponding model
 | Author | GitHub |
 |---|---|
 | **Tarek Rahman** (T. R.) — Project Owner | [@tarekrahamn](https://github.com/tarekrahamn) |
-| **Mst. Asifa Khatun** (M. A. K.; GitHub display/contributor name: Asifa Islam) | [@islamasifa223-boop](https://github.com/islamasifa223-boop) |
+| **Mst. Asifa Khatun** (M. A. K.) | [@islamasifa223-boop](https://github.com/islamasifa223-boop) |
 | **Afsana Mimi** (A. M.) | [@afsanamimi5799](https://github.com/afsanamimi5799) |
 | **Mst. Farha Musharrat Monira** (M. F. M. M.) | [@Farha-Musharrat-Monira](https://github.com/Farha-Musharrat-Monira) |
 

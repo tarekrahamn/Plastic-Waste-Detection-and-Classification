@@ -101,21 +101,33 @@ The dataset contains **6,356 images** and **7,918 annotations** across the train
 
 ## Methodology
 
-The experimental workflow consists of dataset preparation, model fine-tuning, validation, and comparative evaluation.
+The experimental workflow consists of dataset preparation, pretrained model initialization, independent model training, evaluation, and comparative analysis.
 
 ```mermaid
 flowchart TD
-    A[Plastic Waste Dataset] --> B[Dataset preparation and export]
-    B --> C[Train / Validation / Test split]
-    C --> D1[YOLOv8s]
-    C --> D2[YOLO12s]
-    C --> D3[YOLO26s]
-    D1 --> E[Model training]
-    D2 --> E
-    D3 --> E
-    E --> F[Validation and prediction]
-    F --> G[Precision, Recall, F1, mAP]
-    G --> H[Comparative analysis]
+    A[Plastic Waste Dataset] --> B[Dataset Preparation and Export]
+    B --> C[Train / Validation / Test Split]
+    C --> D[Pretrained Model Initialization]
+
+    D --> E1[YOLOv8s]
+    D --> E2[YOLO12s]
+    D --> E3[YOLO26s]
+
+    E1 --> F1[Model Training]
+    E2 --> F2[Model Training]
+    E3 --> F3[Model Training]
+
+    F1 --> G1[Model Evaluation]
+    F2 --> G2[Model Evaluation]
+    F3 --> G3[Model Evaluation]
+
+    G1 --> H[Performance Comparison]
+    G2 --> H
+    G3 --> H
+
+    H --> I[Precision, Recall, F1-score, mAP]
+    I --> J[Comparative Analysis]
+    J --> K[Visualization and Results]
 ```
 
 ### Model training
